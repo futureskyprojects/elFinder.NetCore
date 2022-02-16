@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using elFinder.NetCore.Drivers;
 using elFinder.NetCore.Extensions;
@@ -16,49 +16,49 @@ namespace elFinder.NetCore.Models
         /// <summary>
         ///  Name of file/dir. Required
         /// </summary>
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string Name { get; protected set; }
 
         /// <summary>
         ///  Hash of current file/dir path, first symbol must be letter, symbols before _underline_ - volume id, Required.
         /// </summary>
-        [JsonPropertyName("hash")]
+        [JsonProperty("hash")]
         public string Hash { get; protected set; }
 
         /// <summary>
         ///  mime type. Required.
         /// </summary>
-        [JsonPropertyName("mime")]
+        [JsonProperty("mime")]
         public string Mime { get; protected set; }
 
         /// <summary>
         /// file modification time in unix timestamp. Required.
         /// </summary>
-        [JsonPropertyName("ts")]
+        [JsonProperty("ts")]
         public long UnixTimeStamp { get; protected set; }
 
         /// <summary>
         ///  file size in bytes
         /// </summary>
-        [JsonPropertyName("size")]
+        [JsonProperty("size")]
         public long Size { get; protected set; }
 
         /// <summary>
         ///  is readable
         /// </summary>
-        [JsonPropertyName("read")]
+        [JsonProperty("read")]
         public byte Read { get; protected set; }
 
         /// <summary>
         /// is writable
         /// </summary>
-        [JsonPropertyName("write")]
+        [JsonProperty("write")]
         public byte Write { get; protected set; }
 
         /// <summary>
         ///  is file locked. If locked that object cannot be deleted and renamed
         /// </summary>
-        [JsonPropertyName("locked")]
+        [JsonProperty("locked")]
         public byte Locked { get; protected set; }
 
         public static async Task<FileModel> CreateAsync(IFile file, RootVolume volume)

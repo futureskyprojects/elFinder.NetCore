@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace elFinder.NetCore.Models.Commands
 {
@@ -11,10 +11,10 @@ namespace elFinder.NetCore.Models.Commands
             Removed = new List<string>();
         }
 
-        [JsonPropertyName("added")]
+        [JsonProperty("added")]
         public List<object> Added { get; private set; }
 
-        [JsonPropertyName("removed")]
+        [JsonProperty("removed")]
         public List<string> Removed { get; private set; }
     }
 }

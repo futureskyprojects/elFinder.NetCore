@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace elFinder.NetCore.Models.Commands
 {
@@ -12,10 +12,10 @@ namespace elFinder.NetCore.Models.Commands
             Options = options;
         }
 
-        [JsonPropertyName("api")]
+        [JsonProperty("api")]
         public string Api => "2.1049";
 
-        [JsonPropertyName("netDrivers")]
+        [JsonProperty("netDrivers")]
         public IEnumerable<string> NetDrivers => empty;
     }
 }

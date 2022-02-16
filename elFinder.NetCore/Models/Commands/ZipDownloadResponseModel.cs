@@ -1,21 +1,21 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace elFinder.NetCore.Models.Commands
 {
     public class ZipDownloadResponseModel
     {
-        [JsonPropertyName("zipdl")]
+        [JsonProperty("zipdl")]
         public ZipDownloadData ZipDownload { get; set; }
 
         public class ZipDownloadData
         {
-            [JsonPropertyName("file")]
+            [JsonProperty("file")]
             public string File { get; set; }
 
-            [JsonPropertyName("name")]
+            [JsonProperty("name")]
             public string Name { get; set; }
 
-            [JsonPropertyName("mime")]
+            [JsonProperty("mime")]
             public string Mime { get; set; }
         }
     }

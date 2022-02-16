@@ -1,10 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace elFinder.NetCore.Models
 {
     public class RootModel : DirectoryModel
     {
-        [JsonPropertyName("isroot")]
+        [JsonProperty("isroot")]
         public byte IsRoot => 1;
     }
 }
